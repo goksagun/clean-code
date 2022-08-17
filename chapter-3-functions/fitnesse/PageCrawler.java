@@ -1,3 +1,4 @@
+package fitnesse;
 
 public interface PageCrawler {
 
