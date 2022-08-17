@@ -1,11 +1,7 @@
 package payroll;
 
-public class Employee {
-
-    public Employee(int type) {
-        this.type = type;
-    }
-
-    public int type;
-
+public abstract class Employee {
+    public abstract boolean isPayDay();
+    public abstract Money calculatePay();
+    public abstract void deliveryPay(Money pay);
 }
