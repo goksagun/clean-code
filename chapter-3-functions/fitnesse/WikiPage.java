@@ -2,7 +2,7 @@ package fitnesse;
 
 public class WikiPage {
 
-    public WikiPagePath getPageCrawler() {
+    public PageCrawler getPageCrawler() {
         return null;
     }
 
