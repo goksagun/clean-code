@@ -1,3 +1,4 @@
+package fitnesse;
 
 public class PageCrawlerImpl implements PageCrawler {
 
