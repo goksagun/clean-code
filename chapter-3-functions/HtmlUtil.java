@@ -12,11 +12,11 @@ public class HtmlUtil {
         }
     }
 
-    public static String testableHtml(PageData pageData, boolean includeSuitSetup) throws Exception {
+    public static String testableHtml(PageData pageData, boolean isSuite) throws Exception {
         WikiPage wikiPage = pageData.getWikiPage();
         StringBuffer buffer = new StringBuffer();
         if (pageData.hasAttritube("Test")) {
-            if (includeSuitSetup) {
+            if (isSuite) {
                 WikiPage suiteSetup = PageCrawlerImpl.getInheritedPage(
                     SuiteResponder.SUITE_SETUP_NAME, wikiPage
                 );
@@ -48,7 +48,7 @@ public class HtmlUtil {
                     .append(tearDownPathName)
                     .append("\n");
             }
-            if (includeSuitSetup) {
+            if (isSuite) {
                 WikiPage suiteTearDown = PageCrawlerImpl.getInheritedPage(SuiteResponder.SUITE_TEARDOWN_NAME, wikiPage);
                 if (suiteTearDown != null) {
                     WikiPagePath pagePath = suiteTearDown.getPageCrawler().getFullPath(suiteTearDown);
