@@ -15,7 +15,8 @@ public class HtmlUtil {
     public static String testableHtml(PageData pageData, boolean isSuite) throws Exception {
         WikiPage wikiPage = pageData.getWikiPage();
         StringBuffer buffer = new StringBuffer();
-        if (pageData.hasAttritube("Test")) {
+        boolean isTestPage = pageData.hasAttritube("Test");
+        if (isTestPage) {
             if (isSuite) {
                 WikiPage suiteSetup = PageCrawlerImpl.getInheritedPage(
                     SuiteResponder.SUITE_SETUP_NAME, wikiPage
