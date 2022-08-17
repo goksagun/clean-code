@@ -1,10 +1,16 @@
+package fitnesse;
 /**
  * HtmlUtil
  */
 public class HtmlUtil {
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        PageData pageData = new PageData();
+        try {
+            System.out.println(testableHtml(pageData, false));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String testableHtml(PageData pageData, boolean includeSuitSetup) throws Exception {
