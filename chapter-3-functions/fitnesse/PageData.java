@@ -7,7 +7,7 @@ public class PageData {
     }
 
     public WikiPage getWikiPage() {
-        return null;
+        return new WikiPage();
     }
 
     public boolean hasAttritube(String string) {
