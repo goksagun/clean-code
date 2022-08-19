@@ -1,11 +1,11 @@
 package guess;
 
 public class GuessStatisticsMessage {
+    private String number;
+    private String verb;
+    private String pluralModifier;
 
     private void printGuessStatistics(char candidate, int count) {
-        String number;
-        String verb;
-        String pluralModifier;
         if (count == 0) {
             number = "no";
             verb = "are";
