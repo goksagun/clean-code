@@ -5,12 +5,12 @@ public class GuessStatisticsMessage {
     private String verb;
     private String pluralModifier;
 
-    private void printGuessStatistics(char candidate, int count) {
+    public String make(char candidate, int count) {
         createPluralDependentMessageParts(count);
         String guessMessage = String.format(
             "There %s %s %s%s", verb, number, candidate, pluralModifier
         );
-        print(guessMessage);
+        return guessMessage;
     }
 
     private void createPluralDependentMessageParts(int count) {
@@ -39,9 +39,5 @@ public class GuessStatisticsMessage {
         number = Integer.toString(count);
         verb = "are";
         pluralModifier = "s";
-    }
-
-    private void print(String guessMessage) {
-        System.out.println(guessMessage);
     }
 }
