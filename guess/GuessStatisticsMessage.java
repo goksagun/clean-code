@@ -7,10 +7,9 @@ public class GuessStatisticsMessage {
 
     public String make(char candidate, int count) {
         createPluralDependentMessageParts(count);
-        String guessMessage = String.format(
+        return String.format(
             "There %s %s %s%s", verb, number, candidate, pluralModifier
         );
-        return guessMessage;
     }
 
     private void createPluralDependentMessageParts(int count) {
