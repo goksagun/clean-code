@@ -7,22 +7,34 @@ public class GuessStatisticsMessage {
 
     private void printGuessStatistics(char candidate, int count) {
         if (count == 0) {
-            number = "no";
-            verb = "are";
-            pluralModifier = "s";
+            thereAreNoletters();
         } else if (count == 1) {
-            number = "1";
-            verb = "is";
-            pluralModifier = "";
+            thereIsOneLetter();
         } else {
-            number = Integer.toString(count);
-            verb = "are";
-            pluralModifier = "s";
+            thereAreManyLetters(count);
         }
         String guessMessage = String.format(
             "There %s %s %s%s", verb, number, candidate, pluralModifier
         );
         print(guessMessage);
+    }
+
+    private void thereAreNoletters() {
+        number = "no";
+        verb = "are";
+        pluralModifier = "s";
+    }
+
+    private void thereIsOneLetter() {
+        number = "1";
+        verb = "is";
+        pluralModifier = "";
+    }
+
+    private void thereAreManyLetters(int count) {
+        number = Integer.toString(count);
+        verb = "are";
+        pluralModifier = "s";
     }
 
     private void print(String guessMessage) {
