@@ -6,6 +6,14 @@ public class GuessStatisticsMessage {
     private String pluralModifier;
 
     private void printGuessStatistics(char candidate, int count) {
+        createPluralDependentMessageParts(count);
+        String guessMessage = String.format(
+            "There %s %s %s%s", verb, number, candidate, pluralModifier
+        );
+        print(guessMessage);
+    }
+
+    private void createPluralDependentMessageParts(int count) {
         if (count == 0) {
             thereAreNoletters();
         } else if (count == 1) {
@@ -13,10 +21,6 @@ public class GuessStatisticsMessage {
         } else {
             thereAreManyLetters(count);
         }
-        String guessMessage = String.format(
-            "There %s %s %s%s", verb, number, candidate, pluralModifier
-        );
-        print(guessMessage);
     }
 
     private void thereAreNoletters() {
