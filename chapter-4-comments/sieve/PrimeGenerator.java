@@ -10,4 +10,15 @@ package sieve;
  */
 public class PrimeGenerator {
     
+    private static int[] result;
+
+    public static int[] generatePrimes(int maxValue) {
+        if (maxValue < 2) {
+            return new int[0];
+        }
+
+
+
+        return result;
+    }
 }
